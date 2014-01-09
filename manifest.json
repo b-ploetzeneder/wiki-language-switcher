@@ -1,0 +1,56 @@
+{
+  "name": "Wiki_Language Switcher",
+  "version": "0.0.1",
+  "manifest_version": 2,
+  "description": "This extension injects buttons to switch between English and German language of Wikipedia",
+  "homepage_url": "http://birgitplays.wordpress.com",
+  "icons": {
+    "16": "icons/icon16.png",
+    "48": "icons/icon48.png",
+    "128": "icons/icon128.png"
+  },
+  "default_locale": "en",
+  "background": {
+    "page": "src/bg/background.html",
+    "persistent": true
+  },
+  "page_action": {
+    "default_icon": "icons/icon19.png",
+    "default_title": "page action demo",
+    "default_popup": "src/page_action/page_action.html"
+  },
+  "content_scripts": [
+    {
+      "matches": [
+        "http://de.wikipedia.org/wiki/*"
+      ],
+      "css": [
+        "src/inject/inject.css"
+      ]
+    },
+    {
+      "matches": [
+        "http://de.wikipedia.org/wiki/*"
+		],
+      "js": [
+        "src/inject/inject.js"
+      ]
+    },
+	  {
+      "matches": [
+        "http://en.wikipedia.org/wiki/*"
+      ],
+      "css": [
+        "src/inject/inject.css"
+      ]
+    },
+    {
+      "matches": [
+        "http://en.wikipedia.org/wiki/*"
+		],
+      "js": [
+        "src/inject/inject_english.js"
+      ]
+    }
+  ]
+}

@@ -1,8 +1,11 @@
 {
   "name": "Wiki_Language Switcher",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "options_page": "src/options/options.html",
-  "manifest_version": 2,
+
+  "permissions": [  "storage"  ],
+
+   "manifest_version": 2,
   "description": "allows you to quickly  switch between two Wikipedia languages",
   "homepage_url": "http://birgitplays.wordpress.com",
   "icons": {
@@ -23,35 +26,11 @@
   "content_scripts": [
     {
       "matches": [
-        "http://de.wikipedia.org/wiki/*"
-      ],
-      "css": [
-        "src/inject/inject.css"
-      ]
-    },
-    {
-      "matches": [
-        "http://de.wikipedia.org/wiki/*"
+        "http://*.wikipedia.org/wiki/*"
 		],
       "js": [
         "src/inject/inject.js"
       ]
-    },
-	  {
-      "matches": [
-        "http://en.wikipedia.org/wiki/*"
-      ],
-      "css": [
-        "src/inject/inject.css"
-      ]
-    },
-    {
-      "matches": [
-        "http://en.wikipedia.org/wiki/*"
-		],
-      "js": [
-        "src/inject/inject_english.js"
-      ]
     }
-  ]
+	]
 }

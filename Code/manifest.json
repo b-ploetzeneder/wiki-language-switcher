@@ -19,10 +19,8 @@
     "persistent": true
   },
   "page_action": {
-    "default_icon": "icons/icon19.png",
-    "default_title": "page action demo",
-    "default_popup": "src/page_action/page_action.html"
-  },
+    "default_icon": "icons/icon19.png"
+	},
   "content_scripts": [
     {
       "matches": [
